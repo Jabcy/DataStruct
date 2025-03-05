@@ -18,6 +18,7 @@ int GetLength(LinkList L)
     }
     return len;
 }
+// 获取表长,时间复杂度O(n)
 
 int main()
 {
