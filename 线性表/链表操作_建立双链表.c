@@ -27,11 +27,10 @@ int ShowDLinkListBack(DNode *p){
     {
         printf("%d",p->data);
         p = p->next;
-         
     }
 }
 
-// 双链表的向后遍历,给某个数据节点指针
+// 双链表的向前遍历,给某个数据节点指针
 int ShowDLinkListPrior(DNode *p){
     while (p->prior!=NULL)
     {
