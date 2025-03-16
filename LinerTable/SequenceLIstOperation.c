@@ -7,10 +7,11 @@ typedef struct
     int data[MAXSIZE];
     int length;
 }SeqList;
+// 初始化
 void InitList(SeqList *L){
     L->length=0;
 }
-
+// 插入
 int InsertList(SeqList *L, int e,int i){
     if (L->length>=MAXSIZE)
     {
@@ -30,14 +31,15 @@ int InsertList(SeqList *L, int e,int i){
     L->length++;
     return 0;
 }
-
+// 展示
 void ShowList(SeqList *L){
     for (int i = 0; i < L->length; i++)
     {
         printf("%d\n",L->data[i]);
     }
+    
 }
-
+// 删除
 int DeleteList(SeqList *L,int i,int *e){
     if (i<1||i>L->length+1)
     {
@@ -59,15 +61,18 @@ int DeleteList(SeqList *L,int i,int *e){
 int main(){
     SeqList L;
     InitList(&L);
-    L.length = 4;
     // printf("%d",L.length);
-    L.data[0] = 1;
-    L.data[1] = 2;
-    L.data[2] = 3;
-    L.data[3] = 4;
-    int e;
-    DeleteList(&L,2,&e); 
+    InsertList(&L,7,1);
+    InsertList(&L,8,2);
+    InsertList(&L,23,3);
+    InsertList(&L,7,4);
+    InsertList(&L,8,5);
+    InsertList(&L,23,6);
+    InsertList(&L,7,8);
+    InsertList(&L,8,7);
+    InsertList(&L,23,8);
+    InsertList(&L,7,9);
+    InsertList(&L,1,10);
+
     ShowList(&L);
-    printf("删除%d成功\n",e);
-    return 0;
 }
